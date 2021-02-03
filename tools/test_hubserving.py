@@ -81,7 +81,6 @@ def main(url, image_path):
             logger.info("error in loading image:{}".format(image_file))
             continue
 
-        # 发送HTTP请求
         starttime = time.time()
         data = {'images': [cv2_to_base64(img)]}
         r = requests.post(url=url, headers=headers, data=json.dumps(data))
